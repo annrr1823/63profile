@@ -63,27 +63,49 @@
     }
   }
 
-  function openPieceModal() {
+  const pieceGate = document.getElementById("piece-gate");
+  const pieceContent = document.getElementById("piece-content");
+  const piecePanel = document.getElementById("piece-modal-panel");
+  const projectCode = document.getElementById("project-code");
+  const pieceGateError = document.getElementById("piece-gate-error");
+  const PROJECT_CODE = "32468";
+
+  function resetPieceGate() {
+    if (pieceGate) pieceGate.hidden = false;
+    if (pieceContent) pieceContent.hidden = true;
+    if (projectCode) projectCode.value = "";
+    if (pieceGateError) {
+      pieceGateError.hidden = true;
+      pieceGateError.textContent = "";
+    }
+    piecePanel?.setAttribute("aria-labelledby", "piece-gate-title");
+  }
+
+  function openPieceGate() {
+    resetPieceGate();
     modal.hidden = false;
     document.body.style.overflow = "hidden";
+    projectCode?.focus();
+  }
+
+  function revealPiece() {
+    if (pieceGate) pieceGate.hidden = true;
+    if (pieceContent) pieceContent.hidden = false;
+    piecePanel?.setAttribute("aria-labelledby", "piece-title");
     showToast("FRAGMENT UNLOCKED · PIECE 1");
   }
 
   function closePieceModal() {
     modal.hidden = true;
+    resetPieceGate();
     if (!activePanel) document.body.style.overflow = "";
   }
 
-  function triggerGlitchThenReveal() {
-    if (glitching) return;
-    glitching = true;
-    document.body.classList.add("is-glitching");
-
-    setTimeout(() => {
-      document.body.classList.remove("is-glitching");
-      openPieceModal();
-      glitching = false;
-    }, 580);
+  function denyProjectCode() {
+    if (!pieceGateError) return;
+    pieceGateError.hidden = false;
+    pieceGateError.textContent = "Invalid project code";
+    if (pieceContent) pieceContent.hidden = true;
   }
 
   document.querySelectorAll("[data-open-panel]").forEach((btn) => {
@@ -102,7 +124,7 @@
     btn.addEventListener("click", () => {
       if (btn.classList.contains("redact-project")) {
         btn.classList.add("is-open");
-        triggerGlitchThenReveal();
+        openPieceGate();
         setTimeout(() => btn.classList.remove("is-open"), 2400);
         return;
       }
@@ -117,6 +139,29 @@
 
   modal?.querySelectorAll("[data-close-modal]").forEach((el) => {
     el.addEventListener("click", closePieceModal);
+  });
+
+  document.getElementById("piece-gate-form")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (glitching) return;
+    const value = projectCode?.value.trim() ?? "";
+    if (value !== PROJECT_CODE) {
+      denyProjectCode();
+      return;
+    }
+
+    if (pieceGateError) pieceGateError.hidden = true;
+    glitching = true;
+    document.body.classList.add("is-glitching");
+    setTimeout(() => {
+      document.body.classList.remove("is-glitching");
+      revealPiece();
+      glitching = false;
+    }, 580);
+  });
+
+  projectCode?.addEventListener("input", () => {
+    if (pieceGateError) pieceGateError.hidden = true;
   });
 
   document.addEventListener("keydown", (e) => {

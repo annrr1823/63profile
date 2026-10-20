@@ -1286,6 +1286,42 @@ body.is-glitching .site-nav {
   display: block;
 }
 
+.piece-gate-form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.piece-gate-form input {
+  width: 100%;
+  background: #070809;
+  border: 1px solid var(--line);
+  color: var(--text);
+  font: inherit;
+  font-size: 1.15rem;
+  letter-spacing: 0.22em;
+  padding: 0.9rem 1rem;
+}
+
+.piece-gate-form input::placeholder {
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.piece-gate-form input:focus {
+  outline: none;
+  border-color: rgba(225, 29, 46, 0.75);
+}
+
+.piece-gate-error {
+  margin: 0;
+  color: #ff6b78;
+  font-size: 0.92rem;
+}
+
+.piece-gate-form .btn {
+  justify-self: start;
+}
+
 @media (max-width: 900px) {
   .nav-links {
     display: none;

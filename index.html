@@ -316,18 +316,44 @@
 
     <div class="piece-modal" id="piece-modal" hidden>
       <div class="piece-modal-backdrop" data-close-modal></div>
-      <div class="piece-modal-panel" role="dialog" aria-modal="true" aria-labelledby="piece-title">
-        <div class="panel-toolbar">
-          <div>
-            <p class="piece-modal-kicker">FILE BREACH · FRAGMENT RECOVERED</p>
-            <h2 id="piece-title">Theseus — Piece 1</h2>
+      <div class="piece-modal-panel" id="piece-modal-panel" role="dialog" aria-modal="true" aria-labelledby="piece-gate-title">
+        <div id="piece-gate">
+          <div class="panel-toolbar">
+            <div>
+              <p class="piece-modal-kicker">CLEARANCE REQUIRED</p>
+              <h2 id="piece-gate-title">Enter Project Code</h2>
+            </div>
+            <button type="button" class="panel-close" data-close-modal aria-label="Close">×</button>
           </div>
-          <button type="button" class="panel-close" data-close-modal aria-label="Close">×</button>
+          <form class="piece-gate-form" id="piece-gate-form" autocomplete="off">
+            <input
+              id="project-code"
+              name="project-code"
+              type="text"
+              inputmode="numeric"
+              spellcheck="false"
+              autocomplete="off"
+              maxlength="12"
+              placeholder="Project Code"
+              aria-label="Project Code"
+            />
+            <p class="piece-gate-error" id="piece-gate-error" role="alert" hidden></p>
+            <button type="submit" class="btn primary">Verify</button>
+          </form>
         </div>
-        <div class="piece-modal-frame">
-          <a href="piece1.png" download="piece1.png" aria-label="Download piece1.png">
-            <img src="piece1.png" alt="Project Theseus fragment piece 1" />
-          </a>
+        <div id="piece-content" hidden>
+          <div class="panel-toolbar">
+            <div>
+              <p class="piece-modal-kicker">FILE BREACH · FRAGMENT RECOVERED</p>
+              <h2 id="piece-title">Theseus — Piece 1</h2>
+            </div>
+            <button type="button" class="panel-close" data-close-modal aria-label="Close">×</button>
+          </div>
+          <div class="piece-modal-frame">
+            <a href="piece1.png" download="piece1.png" aria-label="Download piece1.png">
+              <img src="piece1.png" alt="Project Theseus fragment piece 1" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
