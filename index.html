@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FILE No. 63 — FIA Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="is-intro">
+  <section class="intro" id="intro" aria-label="Entrance">
+    <canvas id="intro-bg" aria-hidden="true"></canvas>
+    <div class="intro-wrap" id="intro-wrap">
+      <p class="intro-kicker">TOP SECRET ARCHIVE</p>
+      <h1 class="intro-title">The Future Is Ours to Define.</h1>
+      <p class="intro-subtitle" id="intro-subtitle" original-content="Frontier Intelligence Architecture"></p>
+      <button type="button" class="intro-enter" id="intro-enter">PRESS ENTER</button>
+      <div class="intro-arrows" aria-hidden="true">
+        <span class="intro-arrow intro-arrow-1"></span>
+        <span class="intro-arrow intro-arrow-2"></span>
+      </div>
+    </div>
+    <div class="shape-wrap" aria-hidden="true">
+      <svg class="shape" width="100%" height="100vh" preserveAspectRatio="none" viewBox="0 0 1440 800">
+        <path
+          id="intro-path"
+          fill="#070809"
+          d="M -44,-50 C -52.71,28.52 15.86,8.186 184,14.69 383.3,22.39 462.5,12.58 638,14 835.5,15.6 987,6.4 1194,13.86 1661,30.68 1652,-36.74 1582,-140.1 1512,-243.5 15.88,-589.5 -44,-50 Z"
+          data-path="M -44,-50 C -137.1,117.4 67.86,445.5 236,452 435.3,459.7 500.5,242.6 676,244 873.5,245.6 957,522.4 1154,594 1593,753.7 1793,226.3 1582,-126 1371,-478.3 219.8,-524.2 -44,-50 Z"
+        />
+      </svg>
+    </div>
+  </section>
+
+  <div class="access-flash" id="access-flash" aria-hidden="true"></div>
+
+  <div class="access-warning" id="access-warning" hidden>
+    <div class="access-warning-panel" role="alertdialog" aria-modal="true" aria-labelledby="access-warning-title">
+      <p class="access-warning-kicker">⚠ CLASSIFIED ACCESS</p>
+      <h2 id="access-warning-title">Core Personnel Database</h2>
+      <p class="access-warning-text">
+        You are now accessing the Core Personnel Database. This information is classified and must not be disclosed to unauthorized parties.
+      </p>
+      <button type="button" class="btn primary" id="access-continue">I Understand — Continue</button>
+    </div>
+  </div>
+
+  <div class="site" id="site">
+    <div class="bg-logo" aria-hidden="true"></div>
+    <div class="bg-veil" aria-hidden="true"></div>
+
+    <header class="site-nav">
+      <button type="button" class="brand" id="nav-home" aria-label="FIA Home">
+        <img src="logo.png" alt="FIA" class="brand-mark" />
+        <span class="brand-text">FIA</span>
+      </button>
+      <nav class="nav-links" aria-label="Primary">
+        <button type="button" data-open-panel="about">About Us</button>
+        <button type="button" data-open-panel="careers">Careers</button>
+        <button type="button" data-open-panel="corp-contact">Contact</button>
+      </nav>
+      <div class="nav-meta">
+        <span class="pill danger">TOP SECRET</span>
+        <span class="pill">FILE 63</span>
+      </div>
+    </header>
+
+    <main id="top" class="hub">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="hero-kicker">Frontier Intelligence Architecture</p>
+          <h1 class="hero-title">George William Russell</h1>
+          <p class="hero-lead">
+            Algorithm Engineer · AMG Division · Clearance B
+          </p>
+          <div class="hero-actions panel-launchers">
+            <button type="button" class="btn primary" data-open-panel="profile">Basic Information</button>
+            <button type="button" class="btn ghost" data-open-panel="history">Employment History</button>
+            <button type="button" class="btn ghost" data-open-panel="emergency">Emergency Contact</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-photo">
+            <img src="63.png" alt="George William Russell" />
+            <div class="photo-frame-glow" aria-hidden="true"></div>
+          </div>
+          <p class="hero-id">FIA-AMG-63</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Frontier Intelligence Architecture</span>
+      <span>DOC-REV 63.4 · VIEW-ONLY TERMINAL</span>
+    </footer>
+
+    <div class="panel" id="panel-profile" hidden>
+      <div class="panel-backdrop" data-close-panel></div>
+      <div class="panel-sheet" role="dialog" aria-modal="true" aria-labelledby="profile-title">
+        <div class="panel-toolbar">
+          <h2 id="profile-title">Basic Information</h2>
+          <button type="button" class="panel-close" data-close-panel aria-label="Close">×</button>
+        </div>
+        <p class="panel-desc">Verified identity record for internal operations.</p>
+        <dl class="data-grid">
+          <div class="data-item">
+            <dt>Name</dt>
+            <dd>George William Russell</dd>
+          </div>
+          <div class="data-item">
+            <dt>Gender</dt>
+            <dd>Male</dd>
+          </div>
+          <div class="data-item">
+            <dt>Birth</dt>
+            <dd>1998-02-15</dd>
+          </div>
+          <div class="data-item">
+            <dt>Employee ID</dt>
+            <dd>FIA-AMG-63</dd>
+          </div>
+          <div class="data-item">
+            <dt>Employment Status</dt>
+            <dd><span class="live-dot"></span>Active</dd>
+          </div>
+          <div class="data-item">
+            <dt>Department</dt>
+            <dd>AMG Algorithm Division</dd>
+          </div>
+          <div class="data-item">
+            <dt>Position</dt>
+            <dd>Algorithm Engineer</dd>
+          </div>
+          <div class="data-item">
+            <dt>Security Clearance</dt>
+            <dd><span class="badge-b">B</span></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-history" hidden>
+      <div class="panel-backdrop" data-close-panel></div>
+      <div class="panel-sheet" role="dialog" aria-modal="true" aria-labelledby="history-title">
+        <div class="panel-toolbar">
+          <h2 id="history-title">Employment History</h2>
+          <button type="button" class="panel-close" data-close-panel aria-label="Close">×</button>
+        </div>
+        <p class="panel-desc">Assignment trail inside FIA Technologies.</p>
+        <ol class="timeline" id="timeline">
+          <li>
+            <time datetime="2022-09-27">2022.09.27</time>
+            <div>
+              <h3>Joined FIA</h3>
+              <p>AMG Algorithm Division · Research Assistant</p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2025-03-07">2025.03.07</time>
+            <div>
+              <h3>Promotion</h3>
+              <p>Advanced to Algorithm Engineer</p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2025-12-14">2025.12.14</time>
+            <div>
+              <h3>New Assignment</h3>
+              <p>Human Cognition Modeling unit</p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2026-05-20">2026.05.20</time>
+            <div>
+              <h3>Special Project</h3>
+              <p>
+                Participated in Project
+                <button type="button" class="redact redact-project" data-secret="Theseus" aria-label="Redacted project name">
+                  <span class="redact-bar"></span>
+                  <span class="redact-reveal">Theseus</span>
+                </button>
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-emergency" hidden>
+      <div class="panel-backdrop" data-close-panel></div>
+      <div class="panel-sheet" role="dialog" aria-modal="true" aria-labelledby="emergency-title">
+        <div class="panel-toolbar">
+          <h2 id="emergency-title">Emergency Contact</h2>
+          <button type="button" class="panel-close" data-close-panel aria-label="Close">×</button>
+        </div>
+        <p class="panel-desc">Restricted fields — clearance B insufficient for full reveal.</p>
+        <dl class="contact-grid">
+          <div class="data-item">
+            <dt>Name</dt>
+            <dd>
+              <button type="button" class="redact wide" data-secret="[CLASSIFIED]" aria-label="Redacted name">
+                <span class="redact-bar"></span>
+                <span class="redact-reveal">ACCESS DENIED</span>
+              </button>
+            </dd>
+          </div>
+          <div class="data-item">
+            <dt>Relationship</dt>
+            <dd>
+              <button type="button" class="redact wide" data-secret="[CLASSIFIED]" aria-label="Redacted relationship">
+                <span class="redact-bar"></span>
+                <span class="redact-reveal">ACCESS DENIED</span>
+              </button>
+            </dd>
+          </div>
+          <div class="data-item">
+            <dt>Phone</dt>
+            <dd>
+              <button type="button" class="redact wide" data-secret="[CLASSIFIED]" aria-label="Redacted phone">
+                <span class="redact-bar"></span>
+                <span class="redact-reveal">ACCESS DENIED</span>
+              </button>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-about" hidden>
+      <div class="panel-backdrop" data-close-panel></div>
+      <div class="panel-sheet panel-sheet-wide" role="dialog" aria-modal="true" aria-labelledby="about-title">
+        <div class="panel-toolbar">
+          <h2 id="about-title">About FIA</h2>
+          <button type="button" class="panel-close" data-close-panel aria-label="Close">×</button>
+        </div>
+        <article class="corp-copy">
+          <h3>Defining the Future Through Innovation.</h3>
+          <p>At FIA, we believe that the future is not something to be predicted, but something to be built.</p>
+          <p>Founded on the principles of scientific excellence, technological advancement, and human potential, FIA is a global technology organization dedicated to pushing the boundaries of what is possible. Through interdisciplinary research and advanced engineering, we develop solutions designed to redefine industries and shape the next era of human progress.</p>
+          <h4>Research &amp; Development</h4>
+          <p>FIA operates across multiple fields of advanced technology, bringing together specialists in artificial intelligence, neural systems, human augmentation, and next-generation computational engineering.</p>
+          <p>Our research initiatives are guided by a long-term commitment to technological advancement and the systematic exploration of emerging possibilities.</p>
+          <h4>Our Commitment</h4>
+          <p>We recognize that progress requires discipline, responsibility, and an unwavering commitment to excellence. Every initiative undertaken by FIA reflects our belief that the future belongs to those willing to build it.</p>
+          <p class="corp-tagline"><strong>FIA — The Future Is Ours to Define.</strong></p>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-careers" hidden>
+      <div class="panel-backdrop" data-close-panel></div>
+      <div class="panel-sheet panel-sheet-wide" role="dialog" aria-modal="true" aria-labelledby="careers-title">
+        <div class="panel-toolbar">
+          <h2 id="careers-title">Careers at FIA</h2>
+          <button type="button" class="panel-close" data-close-panel aria-label="Close">×</button>
+        </div>
+        <article class="corp-copy">
+          <h3>Build What Comes Next.</h3>
+          <p>At FIA, we seek individuals who are driven by curiosity, disciplined in their thinking, and committed to solving problems that others consider impossible.</p>
+          <p>Our work spans the frontiers of science, engineering, and intelligent systems. We bring together researchers, engineers, analysts, and specialists who share a common ambition: to transform ambitious ideas into measurable results.</p>
+          <h4>Why FIA?</h4>
+          <ul class="corp-points">
+            <li>
+              <strong>Work at the Frontier</strong>
+              <span>Contribute to advanced research and engineering initiatives in an environment designed to support ambitious technical work.</span>
+            </li>
+            <li>
+              <strong>Collaborate Across Disciplines</strong>
+              <span>Work alongside specialists from diverse scientific and technical backgrounds to address complex challenges.</span>
+            </li>
+            <li>
+              <strong>Grow Through Excellence</strong>
+              <span>Develop your expertise through demanding projects, continuous learning, and a culture that values precision and performance.</span>
+            </li>
+            <li>
+              <strong>Make a Lasting Impact</strong>
+              <span>Participate in initiatives that influence the direction of emerging technologies and their applications.</span>
+            </li>
+          </ul>
+          <h4>Areas of Opportunity</h4>
+          <ul>
+            <li>Artificial Intelligence &amp; Machine Learning</li>
+            <li>Neural Engineering &amp; Cognitive Systems</li>
+            <li>Computational Science &amp; Data Engineering</li>
+            <li>Research Operations &amp; Program Management</li>
+          </ul>
+          <h4>Our Expectations</h4>
+          <p>We value intellectual rigor, professional integrity, discretion, and a willingness to challenge conventional thinking. Candidates working with restricted projects may be subject to additional background verification and confidentiality requirements.</p>
+          <p>All applicants are evaluated according to their qualifications, relevant experience, and suitability for the responsibilities of the role.</p>
+          <h4>Join FIA</h4>
+          <p>The next generation of technology will be shaped by those willing to question limitations and pursue new possibilities.</p>
+          <p>If you are ready to contribute to work at the edge of discovery, we invite you to explore opportunities at FIA.</p>
+          <p class="corp-tagline"><strong>Your expertise. Our vision. The future, together.</strong></p>
+          <p>For career inquiries, please contact our recruitment team through the official FIA recruitment channel.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-corp-contact" hidden>
+      <div class="panel-backdrop" data-close-panel></div>
+      <div class="panel-sheet" role="dialog" aria-modal="true" aria-labelledby="corp-contact-title">
+        <div class="panel-toolbar">
+          <h2 id="corp-contact-title">Contact</h2>
+          <button type="button" class="panel-close" data-close-panel aria-label="Close">×</button>
+        </div>
+        <article class="corp-copy">
+          <p>Whether you are interested in our technologies, exploring a potential partnership, seeking media information, or considering a career with FIA, our team is available to direct your inquiry to the appropriate department.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <div class="glitch-overlay" id="glitch-overlay" aria-hidden="true"></div>
+
+    <div class="piece-modal" id="piece-modal" hidden>
+      <div class="piece-modal-backdrop" data-close-modal></div>
+      <div class="piece-modal-panel" role="dialog" aria-modal="true" aria-labelledby="piece-title">
+        <div class="panel-toolbar">
+          <div>
+            <p class="piece-modal-kicker">FILE BREACH · FRAGMENT RECOVERED</p>
+            <h2 id="piece-title">Theseus — Piece 1</h2>
+          </div>
+          <button type="button" class="panel-close" data-close-modal aria-label="Close">×</button>
+        </div>
+        <div class="piece-modal-frame">
+          <a href="piece1.png" download="piece1.png" aria-label="Download piece1.png">
+            <img src="piece1.png" alt="Project Theseus fragment piece 1" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="intro.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
