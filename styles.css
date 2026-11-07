@@ -473,7 +473,8 @@ main,
   color: var(--muted);
 }
 
-.nav-links button {
+.nav-links button,
+.nav-links a {
   appearance: none;
   border: none;
   background: transparent;
@@ -484,9 +485,11 @@ main,
   cursor: pointer;
   position: relative;
   transition: color 0.2s ease;
+  text-decoration: none;
 }
 
-.nav-links button::after {
+.nav-links button::after,
+.nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -499,11 +502,13 @@ main,
   transition: transform 0.25s ease;
 }
 
-.nav-links button:hover {
+.nav-links button:hover,
+.nav-links a:hover {
   color: var(--text);
 }
 
-.nav-links button:hover::after {
+.nav-links button:hover::after,
+.nav-links a:hover::after {
   transform: scaleX(1);
 }
 
@@ -1323,8 +1328,30 @@ body.is-glitching .site-nav {
 }
 
 @media (max-width: 900px) {
-  .nav-links {
+  .nav-links button {
     display: none;
+  }
+
+  .nav-links {
+    gap: 0;
+  }
+
+  .nav-links a {
+    flex-shrink: 0;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    padding: 0.35rem 0.55rem;
+    border: 1px solid rgba(225, 29, 46, 0.45);
+    background: var(--accent-dim);
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .site-nav {
+    gap: 0.55rem;
   }
 
   .hero {
